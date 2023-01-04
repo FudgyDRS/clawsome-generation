@@ -1,0 +1,176 @@
+{
+  "trait_type": [
+    {
+      "trait": "Foreground",
+      "values": [
+        "Bubbles"
+      ]
+    },
+    {
+      "trait": "Accessory",
+      "values": [
+        "Earring Gold (Double)",
+        "Earring Gold (Right)",
+        "Earring Gold (Left)",
+        "Earring Silver (Left)",
+        "Earring Silver (Right)"
+      ]
+    },
+    {
+      "trait": "Hat",
+      "values": [
+        "Tarboosh",
+        "Chef Hat",
+        "Jester Cap",
+        "Hardhat",
+        "Royal Crown",
+        "Fishy",
+        "Tophat",
+        "headphones",
+        "Headdress",
+        "Crown",
+        "Birthday Hat",
+        "Propeller Cap",
+        "Detective Cap",
+        "Sombrero",
+        "Viking",
+        "Pom Pom Blue",
+        "Pom Pom Brown",
+        "Pom Pom Red",
+        "Witch Hat"
+      ]
+    },
+    {
+      "trait": "Glasses",
+      "values": [
+        "Butterfly Shades",
+        "Aviator Red",
+        "Aviator Purple",
+        "Aviator Green",
+        "Aviator Blue",
+        "Ladder Shades",
+        "Dizzy Glasses",
+        "Flame Shades",
+        "Fishy",
+        "Heart Shades",
+        "Monocle",
+        "3D Eyes",
+        "Hippie Shades",
+        "Pineapple Shades",
+        "Reading Glasses",
+        "Round Shades Gold",
+        "Round Shades Purple",
+        "Round Glasses",
+        "Star Shades"
+      ]
+    },
+    {
+      "trait": "Hair",
+      "values": [
+        "Bowl Cut",
+        "Crazy Black",
+        "Crazy Brown",
+        "Troll",
+        "Bun",
+        "Long",
+        "Afro",
+        "Jester",
+        "Rocker",
+        "Sauve"
+      ]
+    },
+    {
+      "trait": "Eyes",
+      "values": [
+        "Love to Death",
+        "Angry Blue",
+        "Angry Green",
+        "Cute Blue",
+        "Cute Green",
+        "Bashful",
+        "Sarcastic",
+        "Love",
+        "Wandering",
+        "Love to Death (Crying)",
+        "Angry Blue (Crying)",
+        "Angry Green (Crying)",
+        "Cute Blue (Crying)",
+        "Cute Green (Crying)",
+        "Bashful (Crying)",
+        "Sarcastic (Crying)",
+        "Love (Crying)",
+        "Wandering (Crying)"
+      ]
+    },
+    {
+      "trait": "Clothing",
+      "values": [
+        "Bandana Blue",
+        "Bandana Green",
+        "Bandana Pink",
+        "Bowtie Pink",
+        "Bowtie Red",
+        "Detective Coat",
+        "Chef",
+        "Tuxedo",
+        "Hoodie Blue",
+        "Hoodie Green",
+        "Hoodie Pink",
+        "Hoodie Purple",
+        "Hoodie Red",
+        "Hoodie Yellow",
+        "Royal Coat Blue",
+        "Royal Coat Red",
+        "Royal Coat Yellow",
+        "Necklace",
+        "Polo Blue",
+        "Polo Brown",
+        "Polo Red",
+        "Scarf Blue",
+        "Scarf Red",
+        "Scarf Yellow",
+        "Sweater Orange",
+        "Sweater Yellow",
+        "Sweater Red",
+        "Tie Blue",
+        "Tie Green",
+        "Tie Red",
+        "Worker"
+      ]
+    },
+    {
+      "trait": "Cat",
+      "values": [
+        "Ginger",
+        "Oreo",
+        "Psychedelic",
+        "Blackish",
+        "Stray",
+        "Spotted"
+      ]
+    },
+    {
+      "trait": "Background",
+      "values": [
+        "Disco",
+        "Midday",
+        "Sky Blue",
+        "cloudy",
+        "Dirty Green",
+        "Dirty Purple",
+        "Gray",
+        "Lime Green",
+        "Lime Yellow",
+        "Midnight",
+        "Turquoise",
+        "Pink",
+        "Purple",
+        "Purple Ash",
+        "Rainbow",
+        "Rose",
+        "Snowflakes",
+        "Sundown"
+      ]
+    }
+  ]
+}

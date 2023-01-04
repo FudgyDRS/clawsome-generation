@@ -1,0 +1,125 @@
+NFT CAT GIF
+
+	6 cats
+	
+	12 BG
+		6 of them in-motion
+	6 accessories (earings chains)
+		6 bow ties / maybe
+	6 eyes
+	6+ sunglasses
+	
+	6 haircuts
+	6+ hats
+	
+	6+ cloth
+	
+MOTION
+	whiskers move
+	Fire / laser from eyes
+	BG
+	eyes -> hears -> moving in and out
+
+FRONT OF CAT
+	? poping bubbles
+	? fish swim 
+	
+PROMO set up
+Пятно	= 6
+Рыжик	= 6
+Орео	= 6
+Радуга	= 6
+Чернишь	= 6
+Простой	= 5
+
+REMOVED
+fbi hat
+ribbon on body
+
+MUST
+pinapple layer Glasses always go in front of Hair layer
+long hair does not go with Spotted cat
+
+
+PROMO TEXT EDITING
+
+Clawsome Cat Collection
+Name exmp: Rocker Cat, Disco Cat, = have ending cat
+ETH Price: 0.05
+
+
+
+9/17/2022
+Cat Layer Count
+Accessories - 5
+Hats - 19
+Glasses - 43
+Hair - 10
+Eyes - 9
+Clothing - 31
+Cats - 6
+Backgrounds - 18
+
+
+
+w-1329 = 665
+h-2100 = 1050
+
+
+Backgrounds
+Cat
+Clothing
+Eyes
+Hair
+Glasses
+Hat
+Accessory
+
+
+pinapple layer Glasses always go in front of Hair layer
+long hair does not go with Spotted cat
+
+
+if Pineapple Shades
+	keep eyes layer, but delete on generation
+	Cute Blue / Cut Green => Cute
+	Angry Blue / Angry Green => Angry
+
+if Monocle
+	 keep eyes layer, but delete on generation
+
+if Ladder Shades
+	 keep eyes layer, but delete on generation
+
+if Reading Glasses
+	 keep eyes layer, but delete on generation
+
+if Round Shades
+	 keep eyes layer, but delete on generation
+
+if spotted
+	cannot get long hair
+
+
+
+sauve infront of glasses and behind pom pom
+Jester infront of glasses and behind small hat
+
+Flame shades infront of royal crown
+
+Jester hair behind viking
+
+Butterfly Glases infront of pom pom
+Aviator Shades infront of pom pom
+
+Royal Crown infront of double gold earring
+
+
+Fishy glasses infront of headphones
+
+Flame Shaes infront of Crown
+
+Jester infront of Headphones
+
+Long infront of Reading Glasses
+
