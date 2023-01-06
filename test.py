@@ -562,17 +562,17 @@ def createArray(jsonFile):
       print("I killed it2!")
       print(layer)
       if layer["trait_type"] == "Glasses" and layer["value"] == "Pineapple Shades":
-        layersArray = []
+        layersArray = [None] * 7
         for layer in layers:
           #########################################
           # Background
           #########################################
           if layer["trait_type"] == "Background":
             if layer["value"] == "Disco":
-              layersArray.append("layers/" + layer["trait_type"] + "/" + layer["value"] + ".mov")
+              layersArray[0] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".mov"
               isMovie = True
             else:
-              layersArray.append("layers/" + layer["trait_type"] + "/" + layer["value"] + ".png")
+              layersArray[0] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
           #########################################
           # Cat
           #########################################
@@ -580,20 +580,20 @@ def createArray(jsonFile):
             if (layer["value"] == "Ginger") or\
               (layer["value"] == "Oreo") or\
               (layer["value"] == "Psychedelic"):
-              layersArray.append("layers/" + layer["trait_type"] + "/" + layer["value"] + ".mov")
+              layersArray[1] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".mov"
               isMovie = True
             else:
-              layersArray.append("layers/" + layer["trait_type"] + "/" + layer["value"] + ".png")
+              layersArray[1] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
           #########################################
           # Clothing
           #########################################
           if layer["trait_type"] == "Clothing":
-            layersArray.append("layers/" + layer["trait_type"] + "/" + layer["value"] + ".png")
+            layersArray[2] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
           #########################################
           # Hair
           #########################################
           if layer["trait_type"] == "Hair":
-            layersArray.append("layers/" + layer["trait_type"] + "/" + layer["value"] + ".png")
+            layersArray[3] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
           #########################################
           # Glasses + Eyes
           #########################################
@@ -603,17 +603,17 @@ def createArray(jsonFile):
               eyes = "Angry"
             if eyes == "Cute Blue" or eyes == "Cute Green":
               eyes = "Cute"
-            layersArray.append("layers/Glasses/" + "Pineapple Shades (" + eyes + ").png")
+            layersArray[4] = "layers/Glasses/" + "Pineapple Shades (" + eyes + ").png"
           #########################################
           # Hat
           #########################################
           if layer["trait_type"] == "Hat":
-            layersArray.append("layers/" + layer["trait_type"] + "/" + layer["value"] + ".png")
+            layersArray[5] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
           #########################################
           # Accessory
           #########################################
           if layer["trait_type"] == "Accessory":
-            layersArray.append("layers/" + layer["trait_type"] + "/" + layer["value"] + ".png")
+            layersArray[6] ="layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
         break
       elif (layer["trait_type"] == "Glasses" and layer["value"] == "Reading Glasses") or\
            (layer["trait_type"] == "Glasses" and layer["value"] == "Round Glasses"):
@@ -827,6 +827,10 @@ def createArray(jsonFile):
       if layer["trait_type"] == "Accessory":
         layersArray[6] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
 
+    if layersArray[3].split(".")[0] == "Sauve":
+      temp = layersArray[4]
+      layersArray[4] = layersArray[3]
+      layersArray[3] = temp
     finalArray = []
     print("layersarray: ", layersArray)
     for layer in layersArray:
