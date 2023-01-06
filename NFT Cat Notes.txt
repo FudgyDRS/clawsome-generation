@@ -108,6 +108,7 @@ sauve infront of monocle
 sauve infront of round shades
 sauve infront of heart shades
 sauve infront of aviator shades
+sauve infront on fishy
 
 Flame shades infront of royal crown
 
@@ -128,3 +129,9 @@ Jester infront of Headphones
 Long infront of Reading Glasses
 
 round shades infront of headphones
+
+bowlcut infront on headphones
+
+headphones infront of earring gold right
+
+butterfly shades infront on earring silver right

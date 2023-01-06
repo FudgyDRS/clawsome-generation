@@ -435,6 +435,7 @@ def generate_metadata(baseDirectory, baseMetadata, size):
         metadata["attributes"][2]["value"] == "Fishy" and metadata["attributes"][1]["value"] == "Pom Pom Brown" or\
         metadata["attributes"][2]["value"] == "Fishy" and metadata["attributes"][1]["value"] == "Pom Pom Red" or\
         metadata["attributes"][2]["value"] == "None" and metadata["attributes"][4]["value"] == "None" or\
+        metadata["attributes"][2]["value"] != "None" and metadata["attributes"][4]["value"] == "None" or\
         metadata["attributes"][2]["value"] != "None" and metadata["attributes"][4]["value"] == "Crying" or\
         metadata["attributes"][0]["value"] != "None" and metadata["attributes"][1]["value"] == "Royal Crown" or\
         metadata["attributes"][0]["value"] != "None" and metadata["attributes"][1]["value"] == "Headdress" or\
@@ -444,7 +445,9 @@ def generate_metadata(baseDirectory, baseMetadata, size):
         metadata["attributes"][0]["value"] == "Earring Gold (Double)" and metadata["attributes"][1]["value"] == "Pom Pom Red" or\
         metadata["attributes"][0]["value"] == "Earring Gold (Double)" and metadata["attributes"][1]["value"] == "Headphones" or\
         metadata["attributes"][0]["value"] == "Earring Gold (Double)" and metadata["attributes"][1]["value"] == "Sombrero" or\
+        metadata["attributes"][0]["value"] == "Earring Gold (Double)" and metadata["attributes"][1]["value"] == "Viking" or\
         metadata["attributes"][0]["value"] == "Earring Silver (Right)" and metadata["attributes"][1]["value"] == "Viking" or\
+        metadata["attributes"][0]["value"] == "Earring Silver (Right)" and metadata["attributes"][1]["value"] == "Sombrero" or\
         metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Chef Hat" or\
         metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Fishy" or\
         metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Birthday Hat" or\
@@ -486,6 +489,7 @@ def generate_metadata(baseDirectory, baseMetadata, size):
         metadata["attributes"][3]["value"] == "Jester" and metadata["attributes"][1]["value"] == "Hardhat" or\
         metadata["attributes"][3]["value"] == "Jester" and metadata["attributes"][1]["value"] == "Detective Cap" or\
         metadata["attributes"][3]["value"] == "Jester" and metadata["attributes"][1]["value"] == "Tophat" or\
+        metadata["attributes"][3]["value"] == "Jester" and metadata["attributes"][1]["value"] == "Sombrero" or\
         metadata["attributes"][3]["value"] == "Afro" and metadata["attributes"][1]["value"] == "Hardhat" or\
         metadata["attributes"][3]["value"] == "Afro" and metadata["attributes"][1]["value"] == "Sombrero" or\
         metadata["attributes"][3]["value"] == "Afro" and metadata["attributes"][1]["value"] == "Propeller Cap" or\
@@ -502,6 +506,7 @@ def generate_metadata(baseDirectory, baseMetadata, size):
         metadata["attributes"][3]["value"] == "Troll" and metadata["attributes"][1]["value"] == "Detective Cap" or\
         metadata["attributes"][3]["value"] == "Troll" and metadata["attributes"][1]["value"] == "Propeller Cap" or\
         metadata["attributes"][3]["value"] == "Troll" and metadata["attributes"][1]["value"] == "Witch Hat" or\
+        metadata["attributes"][3]["value"] == "Troll" and metadata["attributes"][1]["value"] == "Crown" or\
         metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Fishy" or\
         metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Birthday Hat" or\
         metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Hardhat" or\
@@ -525,8 +530,10 @@ def generate_metadata(baseDirectory, baseMetadata, size):
         metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Sombrero" or\
         metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Fishy" or\
         metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Witch Hat" or\
+        metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Hardhat" or\
         metadata["attributes"][3]["value"] == "Sauve" and metadata["attributes"][1]["value"] == "Fishy" or\
         metadata["attributes"][3]["value"] == "Sauve" and metadata["attributes"][1]["value"] == "Birthday Hat" or\
+        metadata["attributes"][3]["value"] == "Sauve" and metadata["attributes"][1]["value"] == "Witch Hat" or\
         metadata["attributes"][3]["value"] == "Long" and metadata["attributes"][1]["value"] == "Pom Pom Blue" or\
         metadata["attributes"][3]["value"] == "Long" and metadata["attributes"][1]["value"] == "Pom Pom Brown" or\
         metadata["attributes"][3]["value"] == "Long" and metadata["attributes"][1]["value"] == "Pom Pom Red" or\
@@ -550,6 +557,7 @@ def createArray(jsonFile):
     data = json.load(f)
     layers = data["attributes"]
     layersArray = [None] * 7
+    isMovie = False
     for layer in layers:
       print("I killed it2!")
       print(layer)
@@ -562,6 +570,7 @@ def createArray(jsonFile):
           if layer["trait_type"] == "Background":
             if layer["value"] == "Disco":
               layersArray.append("layers/" + layer["trait_type"] + "/" + layer["value"] + ".mov")
+              isMovie = True
             else:
               layersArray.append("layers/" + layer["trait_type"] + "/" + layer["value"] + ".png")
           #########################################
@@ -572,6 +581,7 @@ def createArray(jsonFile):
               (layer["value"] == "Oreo") or\
               (layer["value"] == "Psychedelic"):
               layersArray.append("layers/" + layer["trait_type"] + "/" + layer["value"] + ".mov")
+              isMovie = True
             else:
               layersArray.append("layers/" + layer["trait_type"] + "/" + layer["value"] + ".png")
           #########################################
@@ -616,6 +626,7 @@ def createArray(jsonFile):
           if layer["trait_type"] == "Background":
             if layer["value"] == "Disco":
               layersArray[0] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".mov"
+              isMovie = True
             else:
               layersArray[0] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
           #########################################
@@ -626,6 +637,7 @@ def createArray(jsonFile):
               (layer["value"] == "Oreo") or\
               (layer["value"] == "Psychedelic"):
               layersArray[1] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".mov"
+              isMovie = True
             else:
               layersArray[1] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
           #########################################
@@ -670,6 +682,7 @@ def createArray(jsonFile):
           if layer["trait_type"] == "Background":
             if layer["value"] == "Disco":
               layersArray[0] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".mov"
+              isMovie = True
             else:
               layersArray[0] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
           #########################################
@@ -680,6 +693,7 @@ def createArray(jsonFile):
               (layer["value"] == "Oreo") or\
               (layer["value"] == "Psychedelic"):
               layersArray[1] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".mov"
+              isMovie = True
             else:
               layersArray[1] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
           #########################################
@@ -718,6 +732,7 @@ def createArray(jsonFile):
           if layer["trait_type"] == "Background":
             if layer["value"] == "Disco":
               layersArray[0] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".mov"
+              isMovie = True
             else:
               layersArray[0] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
           #########################################
@@ -728,6 +743,7 @@ def createArray(jsonFile):
                 (layer["value"] == "Oreo") or\
                 (layer["value"] == "Psychedelic"):
               layersArray[1] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".mov"
+              isMovie = True
             else:
               layersArray[1] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
           #########################################
@@ -746,6 +762,7 @@ def createArray(jsonFile):
           if layer["trait_type"] == "Glasses":
             if layer["value"] == "Butterfly Shades":
               layersArray[4] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".mov"
+              isMovie = True
             else:
               layersArray[4] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
           #########################################
@@ -766,6 +783,7 @@ def createArray(jsonFile):
       if layer["trait_type"] == "Background":
         if layer["value"] == "Disco":
           layersArray[0] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".mov"
+          isMovie = True
         else:
           layersArray[0] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
       #########################################
@@ -776,6 +794,7 @@ def createArray(jsonFile):
             (layer["value"] == "Oreo") or\
             (layer["value"] == "Psychedelic"):
           layersArray[1] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".mov"
+          isMovie = True
         else:
           layersArray[1] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
       #########################################
@@ -794,6 +813,7 @@ def createArray(jsonFile):
       if layer["trait_type"] == "Eyes":
           if layer["value"] == "Love to Death":
             layersArray[4] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".mov"
+            isMovie = True
           else:
             layersArray[4] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
       #########################################
@@ -812,7 +832,7 @@ def createArray(jsonFile):
     for layer in layersArray:
       if "None.png" not in layer:
         finalArray.append(layer)
-    return finalArray
+    return finalArray, isMovie
 
 def generate_mp4(baseDirectory, inputDir):
   path = os.path.abspath(baseDirectory) + '/mp4'
@@ -836,7 +856,7 @@ def generate_mp4(baseDirectory, inputDir):
         print('Type yes or no (y = yes, n = No):')
 
   for filename in os.listdir(inputDir):
-    layers = createArray(os.path.abspath(inputDir) + '/' + filename)
+    layers, isMovie = createArray(os.path.abspath(inputDir) + '/' + filename)
     #print(layers)
     #print("Generating MOV output: ")
     print("processing: ", layers)
@@ -863,7 +883,7 @@ def generate_mp4(baseDirectory, inputDir):
     #  video.overlay(layersArray[j])
     (
         video
-        .output(path + '/' + filename + '.mp4')
+        .output(path + '/' + filename + ('.mp4' if isMovie else '.png'))
         .run()
     )
 try:
