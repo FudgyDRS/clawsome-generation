@@ -261,11 +261,11 @@ def generate_mp4(baseDirectory, inputDir):
       layers = createArray(os.path.abspath(inputDir) + '/' + filename)
       #print(layers)
       #print("Generating MOV output: ")
-      layer5 = ffmpeg.input(os.path.abspath(basedirectory) + '/layers/Background/' + layers[0])
-      layer4 = ffmpeg.input(os.path.abspath(basedirectory) + '/layers/Horse/Horse+BG.mov')
-      layer3 = ffmpeg.input(os.path.abspath(basedirectory) + '/layers/Frame Background/' + layers[1])
-      layer2 = ffmpeg.input(os.path.abspath(basedirectory) + '/layers/Frame/' + layers[2])
-      layer1 = ffmpeg.input(os.path.abspath(basedirectory) + '/layers/Symbol/' + layers[3])
+      layer5 = ffmpeg.input(os.path.abspath(baseDirectory) + '/layers/Background/' + layers[0])
+      layer4 = ffmpeg.input(os.path.abspath(baseDirectory) + '/layers/Horse/Horse+BG.mov')
+      layer3 = ffmpeg.input(os.path.abspath(baseDirectory) + '/layers/Frame Background/' + layers[1])
+      layer2 = ffmpeg.input(os.path.abspath(baseDirectory) + '/layers/Frame/' + layers[2])
+      layer1 = ffmpeg.input(os.path.abspath(baseDirectory) + '/layers/Symbol/' + layers[3])
       (
         layer5
         .overlay(layer4)
@@ -426,6 +426,7 @@ def generate_metadata(baseDirectory, baseMetadata, size):
         metadata["attributes"][2]["value"] == "Monocle" and metadata["attributes"][4]["value"] == "Love to Death" or\
         metadata["attributes"][2]["value"] == "Ladder Shades" and metadata["attributes"][4]["value"] == "Love to Death" or\
         metadata["attributes"][2]["value"] == "Reading Glasses" and metadata["attributes"][4]["value"] == "Love to Death" or\
+        metadata["attributes"][2]["value"] == "Round Glasses" and metadata["attributes"][4]["value"] == "Love to Death" or\
         metadata["attributes"][2]["value"] == "Round Shades" and metadata["attributes"][4]["value"] == "Love to Death" or\
         metadata["attributes"][2]["value"] == "Round Shades" and metadata["attributes"][1]["value"] == "Tophat" or\
         metadata["attributes"][2]["value"] == "Butterfly Shades" and metadata["attributes"][1]["value"] == "Witch Hat" or\
@@ -441,6 +442,9 @@ def generate_metadata(baseDirectory, baseMetadata, size):
         metadata["attributes"][0]["value"] == "Earring Gold (Double)" and metadata["attributes"][1]["value"] == "Pom Pom Blue" or\
         metadata["attributes"][0]["value"] == "Earring Gold (Double)" and metadata["attributes"][1]["value"] == "Pom Pom Brown" or\
         metadata["attributes"][0]["value"] == "Earring Gold (Double)" and metadata["attributes"][1]["value"] == "Pom Pom Red" or\
+        metadata["attributes"][0]["value"] == "Earring Gold (Double)" and metadata["attributes"][1]["value"] == "Headphones" or\
+        metadata["attributes"][0]["value"] == "Earring Gold (Double)" and metadata["attributes"][1]["value"] == "Sombrero" or\
+        metadata["attributes"][0]["value"] == "Earring Silver (Right)" and metadata["attributes"][1]["value"] == "Viking" or\
         metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Chef Hat" or\
         metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Fishy" or\
         metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Birthday Hat" or\
@@ -450,6 +454,8 @@ def generate_metadata(baseDirectory, baseMetadata, size):
         metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Witch Hat" or\
         metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Crown" or\
         metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Detective Cap" or\
+        metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Propeller Cap" or\
+        metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Witch Hat" or\
         metadata["attributes"][3]["value"] == "Crazy Black" and metadata["attributes"][1]["value"] == "Chef Hat" or\
         metadata["attributes"][3]["value"] == "Crazy Black" and metadata["attributes"][1]["value"] == "Pom Pom Blue" or\
         metadata["attributes"][3]["value"] == "Crazy Black" and metadata["attributes"][1]["value"] == "Pom Pom Brown" or\
@@ -467,6 +473,9 @@ def generate_metadata(baseDirectory, baseMetadata, size):
         metadata["attributes"][3]["value"] == "Troll" and metadata["attributes"][1]["value"] == "Pom Pom Brown" or\
         metadata["attributes"][3]["value"] == "Troll" and metadata["attributes"][1]["value"] == "Pom Pom Red" or\
         metadata["attributes"][3]["value"] == "Troll" and metadata["attributes"][1]["value"] == "Tarboosh" or\
+        metadata["attributes"][3]["value"] == "Troll" and metadata["attributes"][1]["value"] == "Viking" or\
+        metadata["attributes"][3]["value"] == "Troll" and metadata["attributes"][1]["value"] == "Tophat" or\
+        metadata["attributes"][3]["value"] == "Troll" and metadata["attributes"][1]["value"] == "Jester Cap" or\
         metadata["attributes"][3]["value"] == "Afro" and metadata["attributes"][1]["value"] == "Viking" or\
         metadata["attributes"][3]["value"] == "Afro" and metadata["attributes"][1]["value"] == "Pom Pom Blue" or\
         metadata["attributes"][3]["value"] == "Afro" and metadata["attributes"][1]["value"] == "Pom Pom Brown" or\
@@ -476,6 +485,7 @@ def generate_metadata(baseDirectory, baseMetadata, size):
         metadata["attributes"][3]["value"] == "Jester" and metadata["attributes"][1]["value"] == "Pom Pom Red" or\
         metadata["attributes"][3]["value"] == "Jester" and metadata["attributes"][1]["value"] == "Hardhat" or\
         metadata["attributes"][3]["value"] == "Jester" and metadata["attributes"][1]["value"] == "Detective Cap" or\
+        metadata["attributes"][3]["value"] == "Jester" and metadata["attributes"][1]["value"] == "Tophat" or\
         metadata["attributes"][3]["value"] == "Afro" and metadata["attributes"][1]["value"] == "Hardhat" or\
         metadata["attributes"][3]["value"] == "Afro" and metadata["attributes"][1]["value"] == "Sombrero" or\
         metadata["attributes"][3]["value"] == "Afro" and metadata["attributes"][1]["value"] == "Propeller Cap" or\
@@ -489,12 +499,18 @@ def generate_metadata(baseDirectory, baseMetadata, size):
         metadata["attributes"][3]["value"] == "Troll" and metadata["attributes"][1]["value"] == "Hardhat" or\
         metadata["attributes"][3]["value"] == "Troll" and metadata["attributes"][1]["value"] == "Headdress" or\
         metadata["attributes"][3]["value"] == "Troll" and metadata["attributes"][1]["value"] == "Birthday Hat" or\
+        metadata["attributes"][3]["value"] == "Troll" and metadata["attributes"][1]["value"] == "Detective Cap" or\
+        metadata["attributes"][3]["value"] == "Troll" and metadata["attributes"][1]["value"] == "Propeller Cap" or\
+        metadata["attributes"][3]["value"] == "Troll" and metadata["attributes"][1]["value"] == "Witch Hat" or\
         metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Fishy" or\
         metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Birthday Hat" or\
         metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Hardhat" or\
         metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Tarboosh" or\
         metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Viking" or\
         metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Detective Cap" or\
+        metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Crown" or\
+        metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Propeller Cap" or\
+        metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Tophat" or\
         metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Tophat" or\
         metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Chef Hat" or\
         metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Jester Cap" or\
@@ -506,6 +522,8 @@ def generate_metadata(baseDirectory, baseMetadata, size):
         metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Pom Pom Brown" or\
         metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Pom Pom Red" or\
         metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Sombrero" or\
+        metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Fishy" or\
+        metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Witch Hat" or\
         metadata["attributes"][3]["value"] == "Sauve" and metadata["attributes"][1]["value"] == "Fishy" or\
         metadata["attributes"][3]["value"] == "Sauve" and metadata["attributes"][1]["value"] == "Birthday Hat" or\
         metadata["attributes"][3]["value"] == "Long" and metadata["attributes"][1]["value"] == "Pom Pom Blue" or\
@@ -690,7 +708,7 @@ def createArray(jsonFile):
           if layer["trait_type"] == "Accessory":
             layersArray[6] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
         break
-      elif layer["trait_type"] == "Glasses" and layer["value"] != "Ladder Shades":
+      elif layer["trait_type"] == "Glasses" and layer["value"] != "None" and layer["value"] != "Ladder Shades":
         layersArray = [None] * 7
         for layer in layers:
           #########################################

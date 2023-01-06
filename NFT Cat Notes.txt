@@ -104,6 +104,9 @@ if spotted
 
 sauve infront of glasses and behind pom pom
 Jester infront of glasses and behind small hat
+sauve infront of monocle
+sauve infront of round shades
+sauve infront of heart shades
 
 Flame shades infront of royal crown
 
@@ -123,3 +126,4 @@ Jester infront of Headphones
 
 Long infront of Reading Glasses
 
+round shades infront of headphones

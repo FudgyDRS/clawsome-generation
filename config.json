@@ -17,7 +17,7 @@
       {"name": "Royal Crown"  , "hex": "0x05"}, 
       {"name": "Fishy"        , "hex": "0x06"}, 
       {"name": "Tophat"       , "hex": "0x07"}, 
-      {"name": "headphones"   , "hex": "0x08"}, 
+      {"name": "Headphones"   , "hex": "0x08"}, 
       {"name": "Headdress"    , "hex": "0x09"}, 
       {"name": "Crown"        , "hex": "0x0A"}, 
       {"name": "Birthday Hat" , "hex": "0x0B"}, 
