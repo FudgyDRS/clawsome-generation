@@ -511,6 +511,7 @@ def generate_metadata(baseDirectory, baseMetadata, size):
         metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Crown" or\
         metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Propeller Cap" or\
         metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Tophat" or\
+        metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Witch Hat" or\
         metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Tophat" or\
         metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Chef Hat" or\
         metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Jester Cap" or\
