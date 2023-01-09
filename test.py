@@ -448,6 +448,8 @@ def generate_metadata(baseDirectory, baseMetadata, size):
         metadata["attributes"][0]["value"] == "Earring Gold (Double)" and metadata["attributes"][1]["value"] == "Viking" or\
         metadata["attributes"][0]["value"] == "Earring Silver (Right)" and metadata["attributes"][1]["value"] == "Viking" or\
         metadata["attributes"][0]["value"] == "Earring Silver (Right)" and metadata["attributes"][1]["value"] == "Sombrero" or\
+        metadata["attributes"][0]["value"] == "Earring Silver (Right)" and metadata["attributes"][2]["value"] == "Butterfly Shades" or\
+        metadata["attributes"][0]["value"] == "Earring Gold (Double)" and metadata["attributes"][3]["value"] == "Jester" or\
         metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Chef Hat" or\
         metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Fishy" or\
         metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Birthday Hat" or\
@@ -458,7 +460,7 @@ def generate_metadata(baseDirectory, baseMetadata, size):
         metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Crown" or\
         metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Detective Cap" or\
         metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Propeller Cap" or\
-        metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Witch Hat" or\
+        metadata["attributes"][3]["value"] == "Bun" and metadata["attributes"][1]["value"] == "Tophat" or\
         metadata["attributes"][3]["value"] == "Crazy Black" and metadata["attributes"][1]["value"] == "Chef Hat" or\
         metadata["attributes"][3]["value"] == "Crazy Black" and metadata["attributes"][1]["value"] == "Pom Pom Blue" or\
         metadata["attributes"][3]["value"] == "Crazy Black" and metadata["attributes"][1]["value"] == "Pom Pom Brown" or\
@@ -490,6 +492,8 @@ def generate_metadata(baseDirectory, baseMetadata, size):
         metadata["attributes"][3]["value"] == "Jester" and metadata["attributes"][1]["value"] == "Detective Cap" or\
         metadata["attributes"][3]["value"] == "Jester" and metadata["attributes"][1]["value"] == "Tophat" or\
         metadata["attributes"][3]["value"] == "Jester" and metadata["attributes"][1]["value"] == "Sombrero" or\
+        metadata["attributes"][3]["value"] == "Jester" and metadata["attributes"][1]["value"] == "Witch Hat" or\
+        metadata["attributes"][3]["value"] == "Jester" and metadata["attributes"][1]["value"] == "Chef Hat" or\
         metadata["attributes"][3]["value"] == "Afro" and metadata["attributes"][1]["value"] == "Hardhat" or\
         metadata["attributes"][3]["value"] == "Afro" and metadata["attributes"][1]["value"] == "Sombrero" or\
         metadata["attributes"][3]["value"] == "Afro" and metadata["attributes"][1]["value"] == "Propeller Cap" or\
@@ -517,6 +521,7 @@ def generate_metadata(baseDirectory, baseMetadata, size):
         metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Propeller Cap" or\
         metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Tophat" or\
         metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Witch Hat" or\
+        metadata["attributes"][3]["value"] == "Bowl Cut" and metadata["attributes"][1]["value"] == "Chef Hat" or\
         metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Tophat" or\
         metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Chef Hat" or\
         metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Jester Cap" or\
@@ -828,10 +833,29 @@ def createArray(jsonFile):
       if layer["trait_type"] == "Accessory":
         layersArray[6] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
 
+    # If hair == sauve, but it infront of glasses
     if layersArray[3].split(".")[0] == "layers/Hair/Sauve":
       temp = layersArray[4]
       layersArray[4] = layersArray[3]
       layersArray[3] = temp
+    
+    # If glasses == Butterfly Shades and pop pop, then swap layers
+    if (
+        layersArray[2].split(".")[0] == "layers/Hair/Butterfly Shades" or\
+          layersArray[2].split(".")[0] == "layers/Hair/Aviator Blue" or\
+          layersArray[2].split(".")[0] == "layers/Hair/Aviator Green" or\
+          layersArray[2].split(".")[0] == "layers/Hair/Aviator Purple" or\
+          layersArray[2].split(".")[0] == "layers/Hair/Aviator Red"
+      ) and\
+      (
+        layersArray[1].split(".")[0] == "layers/Hair/Pom Pom Blue" or\
+        layersArray[1].split(".")[0] == "layers/Hair/Pom Pom Brown" or \
+        layersArray[1].split(".")[0] == "layers/Hair/Pom Pom Red"
+      ):
+        temp = layersArray[2]
+        layersArray[2] = layersArray[1]
+        layersArray[1] = temp
+  
     finalArray = []
     print("layersarray: ", layersArray)
     for layer in layersArray:
