@@ -531,6 +531,7 @@ def generate_metadata(baseDirectory, baseMetadata, size):
         metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Fishy" or\
         metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Witch Hat" or\
         metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Hardhat" or\
+        metadata["attributes"][3]["value"] == "Rocker" and metadata["attributes"][1]["value"] == "Viking" or\
         metadata["attributes"][3]["value"] == "Sauve" and metadata["attributes"][1]["value"] == "Fishy" or\
         metadata["attributes"][3]["value"] == "Sauve" and metadata["attributes"][1]["value"] == "Birthday Hat" or\
         metadata["attributes"][3]["value"] == "Sauve" and metadata["attributes"][1]["value"] == "Witch Hat" or\
@@ -595,6 +596,16 @@ def createArray(jsonFile):
           if layer["trait_type"] == "Hair":
             layersArray[3] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
           #########################################
+          # Hat
+          #########################################
+          if layer["trait_type"] == "Hat":
+            layersArray[4] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
+          #########################################
+          # Accessory
+          #########################################
+          if layer["trait_type"] == "Accessory":
+            layersArray[5] ="layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
+          #########################################
           # Glasses + Eyes
           #########################################
           if layer["trait_type"] == "Eyes":
@@ -603,17 +614,7 @@ def createArray(jsonFile):
               eyes = "Angry"
             if eyes == "Cute Blue" or eyes == "Cute Green":
               eyes = "Cute"
-            layersArray[4] = "layers/Glasses/" + "Pineapple Shades (" + eyes + ").png"
-          #########################################
-          # Hat
-          #########################################
-          if layer["trait_type"] == "Hat":
-            layersArray[5] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
-          #########################################
-          # Accessory
-          #########################################
-          if layer["trait_type"] == "Accessory":
-            layersArray[6] ="layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
+            layersArray[6] = "layers/Glasses/" + "Pineapple Shades (" + eyes + ").png"
         break
       elif (layer["trait_type"] == "Glasses" and layer["value"] == "Reading Glasses") or\
            (layer["trait_type"] == "Glasses" and layer["value"] == "Round Glasses"):
@@ -827,7 +828,7 @@ def createArray(jsonFile):
       if layer["trait_type"] == "Accessory":
         layersArray[6] = "layers/" + layer["trait_type"] + "/" + layer["value"] + ".png"
 
-    if layersArray[3].split(".")[0] == "Sauve":
+    if layersArray[3].split(".")[0] == "layers/Hair/Sauve":
       temp = layersArray[4]
       layersArray[4] = layersArray[3]
       layersArray[3] = temp
